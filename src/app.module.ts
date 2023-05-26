@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { join } from 'path';
 import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
+import { TodoModule } from './todo/todo.module';
 
 @Module({
   imports: [
@@ -10,6 +11,7 @@ import { GraphQLModule } from '@nestjs/graphql';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
     }),
+    TodoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
