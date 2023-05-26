@@ -24,9 +24,9 @@ export class Todo {
     @Field((type) => TodoStatus)
     status: TodoStatus;
 
-    @Field()
+    @Field({ nullable: true })
     createdAt: Date;
 
-    @Field()
+    @Field({ nullable: true })
     updatedAt: Date;
 }
